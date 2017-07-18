@@ -1,0 +1,58 @@
+@import "../../vars";
+
+.Campuses {
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    height: 100%;
+    position: relative;
+    object {
+      opacity: 0.0;
+      -webkit-transition: opacity 1s ease;
+      transition: opacity 1s ease;
+      position: absolute;
+      top: 80px;
+      width: 100%;
+      margin-left: -50px;
+    }
+  }
+  .modal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: fixed;
+    margin-left: 0px;
+    margin-top: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    .camp {
+      margin: 10px;
+      background: $lightgray;
+      font-weight: bold;
+      box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+      width: 150px;
+      height: 150px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      color: white;
+      &:hover {
+        background: $devblue;
+        cursor: pointer;
+      }
+    }
+  }
+}

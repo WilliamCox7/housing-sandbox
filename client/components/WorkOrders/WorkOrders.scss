@@ -1,0 +1,60 @@
+@import "../../vars";
+
+.WorkOrders {
+  padding-top: 100px;
+  max-width: 1100px;
+  margin: auto;
+  height: 100%;
+  position: relative;
+  .workorder-list {
+    .workorder-drop-down {
+      width: 100%;
+      background: $lightgray;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      color: $white;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+      &:hover {
+        background: $devblue !important;
+        cursor: pointer;
+      }
+      .left {
+        i {
+          margin-left: 10px;
+        }
+        input {
+          background: none;
+          border: none;
+          margin-left: 10px;
+          color: $white;
+          &::-webkit-input-placeholder {
+            color: white;
+          }
+          &::-moz-placeholder {
+            color: white;
+          }
+          &:-ms-input-placeholder {
+            color: white;
+          }
+          &::placeholder {
+            color: white;
+          }
+        }
+      }
+    }
+    .workorder-cards {
+      -moz-column-count: 3;
+      -moz-column-gap: 10px;
+      -webkit-column-count: 3;
+      -webkit-column-gap: 10px;
+      column-count: 3;
+      column-gap: 10px;
+    }
+  }
+}

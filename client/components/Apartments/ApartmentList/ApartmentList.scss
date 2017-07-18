@@ -1,0 +1,20 @@
+@import "../../../vars";
+
+.apartmentFilter {
+  width: 754px;
+  position: relative;
+  .container {
+    position: relative;
+    .aptCards {
+      position: absolute;
+      width: 663px;
+      margin-top: 70px;
+      -moz-column-count: 2;
+      -moz-column-gap: 25px;
+      -webkit-column-count: 2;
+      -webkit-column-gap: 25px;
+      column-count: 2;
+      column-gap: 25px;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@import "../../vars";
+
+.Waitlist {
+  padding-top: 100px;
+  max-width: 1100px;
+  margin: auto;
+  height: 100%;
+  position: relative;
+  .waitlist-window {
+    overflow-y: auto;
+    height: 400px;
+    padding: 0px 15px;
+    &::-webkit-scrollbar {
+      background: $lightgray;
+      border-radius: 4px;
+      box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+    }
+    &::-webkit-scrollbar-track {
+      background: $lightgray;
+      border-radius: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $devblue;
+      border-radius: 4px;
+    }
+  }
+  .cohort-drop-down {
+    background: $lightgray;
+    color: $white;
+    margin-bottom: 10px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+    padding: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    &:hover {
+      cursor: pointer;
+      background: $devblue !important;
+    }
+  }
+  .waitlist-students {
+    display: none;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    .list-item {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      span {
+        height: 66px;
+        width: 55px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        color: white;
+      }
+      .StudentCard {
+        margin-right: 0px;
+      }
+    }
+  }
+}

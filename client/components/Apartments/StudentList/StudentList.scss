@@ -1,0 +1,29 @@
+@import "../../../vars";
+
+.studentFilter {
+  width: 290px;
+  position: fixed;
+  margin-left: 796px;
+  .container {
+    position: relative;
+    .stuCards {
+      position: absolute;
+      margin-top: 70px;
+      height: 700px;
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        background: $lightgray;
+        border-radius: 4px;
+        box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+      }
+      &::-webkit-scrollbar-track {
+        background: $lightgray;
+        border-radius: 4px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $devblue;
+        border-radius: 4px;
+      }
+    }
+  }
+}

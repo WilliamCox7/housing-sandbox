@@ -1,0 +1,51 @@
+@import "../../vars";
+
+.Nav {
+  background: $lightgray;
+  height: 70px;
+  box-shadow: 0px 0px 10px #2d2d2d;
+  width: 100%;
+  z-index: 1;
+  position: fixed;
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    height: 100%;
+    position: relative;
+    .logo {
+      position: absolute;
+      height: 100%;
+      img {
+        height: inherit;
+        padding: 10px;
+      }
+      .city {
+        color: $devblue;
+        position: absolute;
+        top: calc(100% - 42px);
+        white-space: nowrap;
+      }
+    }
+    .links {
+      float: right;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      height: 100%;
+      a {
+        padding: 25px;
+        text-decoration: none;
+        color: $white;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .curLoc {
+        color: $devblue;
+      }
+    }
+  }
+}

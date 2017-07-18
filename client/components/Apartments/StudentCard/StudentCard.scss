@@ -1,0 +1,78 @@
+@import "../../../vars";
+
+.StudentCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 270px;
+  background: $lightgray;
+  margin-bottom: 10px;
+  margin-right: 25px;
+  padding: 13px;
+  color: white;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+  &:hover {
+    background: $devblue;
+    cursor: -webkit-grab;
+    cursor: grab;
+  }
+  &:active {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+  }
+  .stu-name {
+    margin-bottom: 2px;
+  }
+  .stu-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: relative;
+    bottom: 0;
+    .cohort {
+      font-size: 12px;
+      padding: 6px 0px 0px;
+    }
+    .stu-icons {
+      i {
+        padding: 0px 6px;
+        font-size: 20px;
+        color: $darkgray;
+      }
+      .fa-female {
+        color: white;
+      }
+      .fa-male {
+        color: white;
+      }
+    }
+  }
+}
+
+.upNext {
+  background: $lightgray;
+  font-size: 12px;
+  padding: 5px 13px;
+  color: $white;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+  margin-bottom: 10px;
+  .right {
+    float: right;
+  }
+  &:hover {
+    background: $devblue;
+    cursor: -webkit-grab;
+    cursor: grab;
+  }
+  &:active {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+  }
+}

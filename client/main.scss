@@ -1,0 +1,18 @@
+@import "vars";
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body {
+  background: $darkgray;
+  font-family: Helvetica, sans-serif;
+}
+
+input, button, textarea {
+  outline: none;
+}
+
+.ReactFlipCard, .ReactFlipCard__Flipper,
+.ReactFlipCard__Front, .ReactFlipCard__Back {
+  &:focus {
+    outline: none;
+  }
+}

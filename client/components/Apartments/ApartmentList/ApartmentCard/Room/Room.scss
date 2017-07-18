@@ -1,0 +1,61 @@
+@import "../../../../../vars";
+
+.roomCard {
+  margin-top: -10px;
+  .apt-room {
+    margin: 10px;
+    margin-top: 0px;
+    border: solid 1px $devblue;
+    .apt-header {
+      position: absolute;
+      background: $darkgray;
+      font-size: 10px;
+      color: $white;
+      margin-top: -6px;
+      margin-left: 7px;
+      padding: 0px 2px;
+      &:hover {
+        cursor: pointer;
+      }
+      i {
+        margin-left: 5px;
+      }
+    }
+  }
+  .room-edit {
+    margin: 10px;
+    margin-top: 0px;
+    border: solid 3px $devblue;
+    .room-form {
+      background: $white;
+      padding: 10px;
+      input[type="text"] {
+        margin: 0px 5px;
+        padding: 5px;
+        width: 123px;
+        box-sizing: border-box;
+      }
+      .buttons {
+        padding: 20px 4px;
+        bottom: 0;
+        width: 266px;
+        position: absolute;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        i {
+          font-size: 26px;
+          &:hover {
+            color: $devblue;
+          }
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+@import "../../../../vars";
+
+.ApartmentCard {
+  display: inline-block;
+  width: 318px;
+  margin-bottom: 25px;
+  -webkit-transition: height .4s ease;
+  transition: height .4s ease;
+  .card {
+    width: 318px;
+    border: solid 3px $devblue;
+    margin-top: -13px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+  }
+  .cardFront {
+    background: $darkgray;
+    .address {
+      width: 100%;
+      text-align: center;
+      padding: 25px 15px;
+      margin-bottom: 10px;
+      background: $devblue;
+      font-weight: bold;
+      color: white;
+      .address-icons {
+        position: absolute;
+        right: 0;
+        margin-right: 13px;
+        i {
+          margin-left: 5px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+      .fa-male, .fa-female {
+        position: absolute;
+        left: 0;
+        margin-left: 13px;
+        color: $white;
+        font-size: 25px;
+        margin-top: -4px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .cardBack {
+    background: $white;
+    padding: 10px;
+    input[type="text"] {
+      margin: 7px 8px;
+      padding: 5px;
+      width: calc(100% - 16px);
+      box-sizing: border-box;
+    }
+    .buttons {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      padding: 0px 8px;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      i {
+        font-size: 26px;
+        &:hover {
+          color: $devblue;
+        }
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.ReactFlipCard__Front,
+.ReactFlipCard__Back,
+.ReactFlipCard__Flipper,
+.ReactFlipCard {
+  width: 100%;
+}

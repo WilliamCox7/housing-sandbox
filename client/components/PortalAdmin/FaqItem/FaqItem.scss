@@ -1,0 +1,23 @@
+@import '../../../vars';
+
+.faq-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 20px;
+  margin-bottom: 15px;
+  .faq-text {
+    color: $white;
+    span {
+      color: $devblue;
+    }
+  }
+  i {
+    color: $lightgray;
+    margin-left: 10px;
+    &:hover {
+      color: $white;
+      cursor: pointer;
+    }
+  }
+}
