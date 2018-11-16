@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import FaqItem from './FaqItem/FaqItem';
 import TourPhoto from './TourPhoto/TourPhoto';
 import { addFAQ, addPhoto } from '../../reducers/portalReducer';
-import axios from 'axios';
 import './PortalAdmin.scss';
 
 /* manages tour photos and faq's */
@@ -14,6 +13,7 @@ class PortalAdmin extends Component {
     this.state = {
       q: '',
       a: '',
+      faqId: 1,
       curImg: undefined,
       imgName: ''
     }
@@ -29,32 +29,18 @@ class PortalAdmin extends Component {
   addPhoto() {
     var imageExtension = this.state.curImg.split(';')[0].split('/')
     imageExtension = imageExtension[imageExtension.length - 1];
-    // axios.post('/portal/insertS3', {
-    //   insert: {
-    //     imageName: this.state.imgName,
-    //     imageBody: this.state.curImg,
-    //     imageExtension: imageExtension,
-    //   },
-    //   campus: this.props.campus.city
-    // }).then((result) => {
-    //   this.props.addPhoto(result.data.ops[0]);
-    //   this.setState({curImg: undefined, imgName: ''});
-    // });
+
   }
 
   /* adds a faq to the list of faqs */
   addFAQ() {
-    axios.post('/portal/insert', {
-      collection: 'faq',
-      insert: {
-        q: this.state.q,
-        a: this.state.a,
-        campus: this.props.campus.city
-      }
-    }).then((result) => {
-      this.props.addFAQ(result.data.ops[0]);
-      this.setState({q: '', a: ''});
+    this.props.addFAQ({
+      _id: this.state.faqId,
+      q: this.state.q,
+      a: this.state.a
     });
+    let nextId = this.state.faqId + 1;
+    this.setState({q: '', a: '', faqId: nextId});
   }
 
   /* stores the user input for a new question */

@@ -9,18 +9,12 @@ import rootReducer from './rootReducer';
 
 /* COMPONENTS */
 import App from './App.js';
-import Login from './components/Login/Login';
-import Logout from './components/Login/Logout';
 import IsLoggedIn from './components/IsLoggedIn/IsLoggedIn';
 import IsAdmin from './components/IsAdmin/IsAdmin';
 import Campuses from './components/Campuses/Campuses';
 import Apartments from './components/Apartments/Apartments';
 import Waitlist from './components/Waitlist/Waitlist';
 import WorkOrders from './components/WorkOrders/WorkOrders';
-import IsStudent from './components/IsStudent/IsStudent';
-import Portal from './components/Portal/Portal';
-import Tour from './components/Tour/Tour';
-import FAQ from './components/FAQ/FAQ';
 import PortalAdmin from './components/PortalAdmin/PortalAdmin';
 
 /* STORE - REDUX */
@@ -37,8 +31,6 @@ render (
   <Provider store={store}>
     <Router history={hashHistory}>
       <Route component={App}>
-        <Route path="/login" component={Login} />
-        <Route path="/logout" component={Logout} />
         <Route component={IsLoggedIn}>
           <Route component={IsAdmin}>
             <Route path="/" component={Campuses} />
@@ -46,12 +38,6 @@ render (
             <Route path="/waitlist" component={Waitlist} />
             <Route path="/workorders" component={WorkOrders} />
             <Route path="/portaladmin" component={PortalAdmin} />
-          </Route>
-          <Route component={IsStudent}>
-            <Route path="/portal" component={Portal} />
-            <Route path="/contract" component={Portal} />
-            <Route path="/tour" component={Tour} />
-            <Route path="/faq" component={FAQ} />
           </Route>
         </Route>
       </Route>

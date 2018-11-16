@@ -4,7 +4,6 @@ import { complete } from '../../../reducers/workOrderReducer';
 import FlipCard from 'react-flipcard';
 import ReactDOM from 'react-dom';
 import moment from 'moment';
-import axios from 'axios';
 import './WorkOrder.scss';
 
 /* a single work order and its information */
@@ -23,10 +22,6 @@ class WorkOrder extends Component {
   /* toggles whether or not the work order is complete */
   complete() {
     this.props.complete(this.props.wo.id);
-    axios.post('/workorders/update', {
-      id: this.props.wo.id,
-      update: this.props.wo
-    });
   }
 
   /* flips the FlipCard object */

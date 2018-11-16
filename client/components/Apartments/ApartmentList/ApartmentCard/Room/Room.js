@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import FlipCard from 'react-flipcard';
 import { editRoom, removeRoom } from '../../../../../reducers/apartmentReducer';
 import DropZone from '../DropZone/DropZone';
-import axios from 'axios';
 import './Room.scss';
 
 /* separate container to specify the room a student is in */
@@ -53,25 +52,12 @@ class Room extends Component {
       residents: this.props.room.residents,
       nextCohort: this.props.room.nextCohort
     });
-    axios.post('/apartments/update', {
-      collection: 'rooms',
-      id: this.props.room.id,
-      update: {
-        apartment: this.props.aptId,
-        name: this.refs.name.value,
-        capacity: this.refs.capacity.value
-      }
-    });
     this.flipRoom();
   }
 
   /* deletes the room from the reducer and db */
   removeRoom() {
     this.props.removeRoom(this.props.aptId, this.props.room.id);
-    axios.post('/apartments/remove', {
-      collection: 'rooms',
-      id: this.props.room.id
-    });
     this.flipRoom();
   }
 

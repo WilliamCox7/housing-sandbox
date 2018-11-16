@@ -26,7 +26,6 @@ class Nav extends Component {
       case "Portal": hashHistory.replace("/portal"); break;
       case "Tour": hashHistory.replace("/tour"); break;
       case "FAQ": hashHistory.replace("/faq"); break;
-      case "Logout": hashHistory.replace("/logout"); break;
       default: break;
     }
   }
@@ -68,7 +67,6 @@ class Nav extends Component {
               ) : (
                 <a onClick={this.redirect}>Tour/FAQ</a>
               )}
-              <a onClick={this.redirect}>Logout</a>
            </div>
           </div>
         </div>

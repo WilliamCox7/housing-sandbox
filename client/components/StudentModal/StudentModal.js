@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { editCurStudent } from '../../reducers/studentReducer';
 import { editStudent, removeFromApt, moveStudent } from '../../reducers/apartmentReducer';
-import axios from 'axios';
 import './StudentModal.scss';
 
 /* this popup allows you to edit the selected student */
@@ -46,10 +45,6 @@ class StudentModal extends Component {
     } else {
       this.props.student.status = 'pending'; // if waiting on contract/deposit
     }
-    axios.post('/students/update', {
-      id: this.props.student.id,
-      update: this.props.student
-    });
     this.closeModal(e);
   }
 
@@ -67,10 +62,6 @@ class StudentModal extends Component {
     } else {
       remStu.status = 'pending'; // if waiting on contract/deposit
     }
-    axios.post('/students/update', {
-      id: this.props.student.id,
-      update: remStu
-    });
     this.closeModal(e);
   }
 

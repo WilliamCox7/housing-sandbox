@@ -5,7 +5,6 @@ import { setCampuses, setCity } from '../../reducers/campusReducer';
 import { setApartments } from '../../reducers/apartmentReducer';
 import { setWorkOrders } from '../../reducers/workOrderReducer';
 import { setFAQ, setTour } from '../../reducers/portalReducer';
-import axios from 'axios';
 import Nav from '../Nav/Nav';
 const apartments = require('./apartments.json');
 const rooms = require('./rooms.json');
@@ -22,36 +21,6 @@ class IsAdmin extends Component {
     if (this.props.user.role === 'student') {
       hashHistory.replace("/portal");
     } else {
-      // axios.get('/admin/getAdmin').then((result) => {
-      //   this.props.setCampuses(result.data.campuses);
-      //   if (this.props.location.pathname.indexOf('apartments') > -1) {
-      //     var pathInfo = this.props.location.pathname.split('/');
-      //     var setCity = false;
-      //     result.data.campuses.forEach((campus) => {
-      //       if (campus.city === pathInfo[2]) {
-      //         this.props.setCity(pathInfo[2]);
-      //         setCity = true;
-      //       }
-      //     });
-      //     if (!setCity) {
-      //       hashHistory.replace("/");
-      //     }
-      //   }
-      //   this.props.setApartments({
-      //     apartments: result.data.apartments,
-      //     rooms: result.data.rooms,
-      //     students: result.data.students
-      //   });
-      //   // var test = result.data.students.map((stud) => {
-      //   //   if (stud.campus === 'Provo') {
-      //   //     return stud;
-      //   //   }
-      //   // });
-      //   console.log(JSON.stringify(result.data.tour));
-      //   this.props.setWorkOrders(result.data.workorders);
-      //   this.props.setFAQ(result.data.faq);
-      //   this.props.setTour(result.data.tour);
-      // });
       this.props.setApartments({
         apartments: apartments,
         rooms: rooms,

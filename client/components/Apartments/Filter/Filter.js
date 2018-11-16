@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setIcon, setSrch } from '../../../reducers/filterReducer';
 import { addApartment } from '../../../reducers/apartmentReducer';
-import axios from 'axios';
 import './Filter.scss';
 
 /* manages what to filter in for apartments and students */
@@ -10,6 +9,9 @@ class Filter extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      aptId: 1
+    }
     this.toggleIcon = this.toggleIcon.bind(this);
     this.updSrch = this.updSrch.bind(this);
     this.addApartment = this.addApartment.bind(this);
@@ -23,15 +25,19 @@ class Filter extends Component {
 
   /* adds a new apartment to reduecer and db */
   addApartment() {
-    axios.post('/apartments/insert', {
-      collection: 'apartments',
-      insert: {
-        campus: this.props.campus.city, street: '', no: '', city: '',
-        state: '', zip: '', gender: true
-      }
-    }).then((result) => {
-      this.props.addApartment(result.data.ops[0]);
+    this.props.addApartment({
+      _id: this.state.aptId,
+      campus: "Provo",
+      city: "Provo",
+      gender: true,
+      no: "1",
+      rooms: [],
+      state: "UT",
+      street: "New Apartment",
+      zip: "84606"
     });
+    let nextId = this.state.aptId + 1;
+    this.setState({aptId: nextId});
   }
 
   /* updates the filter's search text */

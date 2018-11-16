@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { editApt, removeApt, addRoom, toggleGender }
   from '../../../../reducers/apartmentReducer';
 import FlipCard from 'react-flipcard';
-import axios from 'axios';
 import Room from './Room/Room';
 import './ApartmentCard.scss';
 
@@ -24,7 +23,8 @@ class ApartmentCard extends Component {
         state: this.props.apt.state,
         zip: this.props.apt.zip,
         rooms: this.props.apt.rooms
-      }
+      },
+      roomId: 1
     }
     this.flipCard = this.flipCard.bind(this);
     this.editApt = this.editApt.bind(this);
@@ -39,19 +39,6 @@ class ApartmentCard extends Component {
   /* changes gender to its opposite (manages count for waitlist) */
   toggleGender() {
     this.props.toggleGender(this.props.apt.id);
-    axios.post('/apartments/update', {
-      collection: 'apartments',
-      id: this.props.apt.id,
-      update: {
-        campus: this.props.apt.campus,
-        street: this.refs.street.value,
-        no: this.refs.no.value,
-        city: this.refs.city.value,
-        state: this.refs.state.value,
-        gender: this.props.apt.gender,
-        zip: this.refs.zip.value
-      }
-    });
   }
 
   /* manages state for FlipCard */
@@ -90,19 +77,6 @@ class ApartmentCard extends Component {
       gender: this.props.apt.gender,
       rooms: this.props.apt.rooms
     });
-    axios.post('/apartments/update', {
-      collection: 'apartments',
-      id: this.props.apt.id,
-      update: {
-        campus: this.props.apt.campus,
-        street: this.refs.street.value,
-        no: this.refs.no.value,
-        city: this.refs.city.value,
-        state: this.refs.state.value,
-        gender: this.props.apt.gender,
-        zip: this.refs.zip.value
-      }
-    });
     this.showFront(e);
   }
 
@@ -125,24 +99,18 @@ class ApartmentCard extends Component {
   /* removes an entire apartment, its rooms, and students from reducer and db */
   removeApt() {
     this.props.removeApt(this.props.apt.id);
-    axios.post('/apartments/remove', {
-      collection: 'apartments',
-      id: this.props.apt.id
-    });
   }
 
   /* appends a room to this apartment (saves in reducer/db) */
   addRoom() {
-    axios.post('/apartments/insert', {
-      collection: 'rooms',
-      insert: {
-        apartment: this.props.apt.id,
-        name: '',
-        capacity: 1
-      }
-    }).then((result) => {
-      this.props.addRoom(result.data.ops[0]);
+    this.props.addRoom({
+      apartment: this.props.apt.id,
+      _id: this.state.roomId,
+      capacity: 1,
+      name: 'new room'
     });
+    let nextId = this.state.roomId + 1;
+    this.setState({roomId: nextId});
   }
 
   render() {

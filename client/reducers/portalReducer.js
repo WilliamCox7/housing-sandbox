@@ -47,6 +47,7 @@ export default function reducer(state=initState, action) {
       return Object.assign({}, state, editState);
 
     case ADD_FAQ: // adds a new faq to the list
+      action.payload.campus = 'Provo';
       editState.faq.push(action.payload);
       return Object.assign({}, state, editState);
 

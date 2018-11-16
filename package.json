@@ -30,7 +30,6 @@
   },
   "dependencies": {
     "aws-sdk": "^2.74.0",
-    "axios": "^0.15.3",
     "body-parser": "^1.16.1",
     "cors": "^2.8.1",
     "devmtn-auth": "=0.2.3",

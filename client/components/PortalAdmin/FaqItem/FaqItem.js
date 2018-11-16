@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deleteFAQ } from '../../../reducers/portalReducer';
-import axios from 'axios';
 import './FaqItem.scss';
 
 /* a single frequently asked question */
@@ -15,10 +14,6 @@ class FaqItem extends Component {
   /* deletes this faq */
   deleteFAQ() {
     this.props.deleteFAQ(this.props.item.id);
-    axios.post('/portal/remove', {
-      id: this.props.item.id,
-      collection: 'faq'
-    });
   }
 
   render() {

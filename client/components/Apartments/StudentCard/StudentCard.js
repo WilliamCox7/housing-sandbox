@@ -5,7 +5,6 @@ import { moveStudent, approveStudent }
   from '../../../reducers/apartmentReducer';
 import ItemTypes from './ItemTypes';
 import { setCurStudent } from '../../../reducers/studentReducer';
-import axios from 'axios';
 import './StudentCard.scss';
 
 /* establishes what is being 'dragged' */
@@ -38,10 +37,6 @@ const studentSource = {
           updatedStu.inApt = true;
           updatedStu.moveFrom = 'residents';
           updatedStu.status = 'assigned';
-          axios.post('/students/update', {
-            id: item.std.id,
-            update: updatedStu
-          });
         }
 
         /* if no more spots available, student is in line for next cohort */
@@ -56,10 +51,6 @@ const studentSource = {
           updatedStu.inApt = true;
           updatedStu.moveFrom = 'nextCohort';
           updatedStu.status = 'assigned';
-          axios.post('/students/update', {
-            id: item.std.id,
-            update: updatedStu
-          });
         }
       }
 
@@ -72,11 +63,6 @@ const studentSource = {
         } else {
           updatedStu.status = 'pending'; // waiting on contract/deposit
         }
-        axios.post('/students/update', {
-          id: item.std.id,
-          update: updatedStu
-        });
-        axios.post('https://devmountain.com/api/hellosign/housingRequest/'+item.std.dmId+'/'+item.std.id);
       }
     }
   }
