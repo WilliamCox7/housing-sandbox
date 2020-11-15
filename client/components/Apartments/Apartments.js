@@ -12,7 +12,7 @@ class Apartments extends Component {
       <div className="Apartments">
         <div className="aptContainer">
           <ApartmentList />
-          <StudentList />
+          {window.innerWidth > 1360 ? <StudentList /> : null}
         </div>
         <StudentModal comp={"Apartments"} />
       </div>

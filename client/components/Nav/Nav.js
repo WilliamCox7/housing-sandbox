@@ -52,21 +52,27 @@ class Nav extends Component {
               ) : (
                 <a onClick={this.redirect}>Apartments</a>
               )}
-              {this.props.loc === "/waitlist" ? (
-                <a className="curLoc" onClick={this.redirect}>Waitlist</a>
-              ) : (
-                <a onClick={this.redirect}>Waitlist</a>
-              )}
-              {this.props.loc === "/workorders" ? (
-                <a className="curLoc" onClick={this.redirect}>Work Orders</a>
-              ) : (
-                <a onClick={this.redirect}>Work Orders</a>
-              )}
-              {this.props.loc === "/portaladmin" ? (
-                <a className="curLoc" onClick={this.redirect}>Tour/FAQ</a>
-              ) : (
-                <a onClick={this.redirect}>Tour/FAQ</a>
-              )}
+              {window.innerWidth > 940 ? (
+                this.props.loc === "/waitlist" ? (
+                  <a className="curLoc" onClick={this.redirect}>Waitlist</a>
+                ) : (
+                  <a onClick={this.redirect}>Waitlist</a>
+                )
+              ): null}
+              {window.innerWidth > 940 ? (
+                this.props.loc === "/workorders" ? (
+                  <a className="curLoc" onClick={this.redirect}>Work Orders</a>
+                ) : (
+                  <a onClick={this.redirect}>Work Orders</a>
+                )
+              ) : null}
+              {window.innerWidth > 940 ? (
+                this.props.loc === "/portaladmin" ? (
+                  <a className="curLoc" onClick={this.redirect}>Tour/FAQ</a>
+                ) : (
+                  <a onClick={this.redirect}>Tour/FAQ</a>
+                )
+              ) : null}
            </div>
           </div>
         </div>
