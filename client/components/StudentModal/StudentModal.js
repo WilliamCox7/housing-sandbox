@@ -24,6 +24,7 @@ class StudentModal extends Component {
     e.target.className.indexOf('fa-trash') > -1) {
       document.getElementsByClassName('modal')[0].style.display = 'none';
     }
+    document.body.style.overflow = null;
   }
 
   /* updates whatever input field is being changed */

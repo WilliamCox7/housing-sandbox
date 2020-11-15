@@ -89,6 +89,7 @@ class StudentCard extends Component {
     this.props.setCurStudent(this.props.std);
     var element = document.getElementsByClassName('modal')[0];
     element.style.display = 'flex';
+    document.body.style.overflow = "hidden";
   }
 
   render() {

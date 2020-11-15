@@ -4,23 +4,15 @@
   position: absolute;
   background: $lightgray;
   padding: 1px 3px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
   .filt-disp {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   i {
     padding: 6px;
     font-size: 26px;
     color: $darkgray;
-    &:hover {
-      color: $white !important;
-      cursor: pointer;
-    }
   }
   input[type="text"] {
     background: $lightgray;
@@ -34,6 +26,9 @@
       color: white;
     }
     &:-ms-input-placeholder {
+      color: white;
+    }
+    &::-ms-input-placeholder {
       color: white;
     }
     &::placeholder {

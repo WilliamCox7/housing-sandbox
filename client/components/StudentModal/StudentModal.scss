@@ -9,12 +9,8 @@
 
 .modal {
   display: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  justify-content: center;
+  align-items: flex-start;
   position: fixed;
   width: 100%;
   margin-left: -20px;
@@ -22,32 +18,31 @@
   margin-top: -30px;
   padding: 30px;
   background: rgba(0,0,0,0.6);
+  overflow: scroll;
   .studentInfoCard {
+    @media(max-width: 600px) {
+      max-width: 100vw;
+      margin-bottom: 60px;
+    }
     padding: 20px 30px;
     box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
     background: $white;
     border: solid 3px $devblue;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     input[type="text"],
     input[type="date"] {
       margin-bottom: 7px;
       padding: 5px;
       width: 175px;
       height: 18px;
+      @media(max-width: 450px) {
+        width: calc(100% - 13px);
+      }
     }
     .studentInfoIcons {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: justify;
-          -ms-flex-pack: justify;
-              justify-content: space-between;
+      justify-content: space-between;
       margin-bottom: 13px;
       margin-top: 5px;
       i {
@@ -60,12 +55,8 @@
     }
     .buttons {
       margin: 5px 0px;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: justify;
-          -ms-flex-pack: justify;
-              justify-content: space-between;
+      justify-content: space-between;
       button {
         background: none;
         border: none;
@@ -81,15 +72,13 @@
       }
     }
     .input-info {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: justify;
-          -ms-flex-pack: justify;
-              justify-content: space-between;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+      justify-content: space-between;
+      flex-wrap: wrap;
       width: 400px;
+      @media(max-width: 600px) {
+        width: 100%;
+      }
       .input-heading {
         width: 100%;
         color: $devblue;
@@ -97,6 +86,9 @@
       }
     }
     .input-field {
+      @media(max-width: 450px) {
+        width: 100%;
+      }
       p {
         position: absolute;
         padding: 0px 2px;
@@ -114,6 +106,9 @@
         width: 189px;
         border: solid 1px #a0a0a0;
         height: 32px;
+        @media(max-width: 450px) {
+          width: 100%;
+        }
       }
     }
     .input-textarea {
