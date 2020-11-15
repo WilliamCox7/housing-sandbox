@@ -53,5 +53,9 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
     "session": "^0.1.0"
+  },
+  "engines": {
+    "node": "10.x",
+    "npm": "6.x"
   }
 }
